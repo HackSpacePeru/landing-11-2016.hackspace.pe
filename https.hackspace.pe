@@ -34,7 +34,7 @@ server {
         limit_req zone=one burst=1 nodelay;
         include /etc/nginx/sites-headers/common.conf;
         include /etc/nginx/sites-headers/hsts.conf;
-        include /etc/nginx/sites-headers/hackspace.pe;
+        # include /etc/nginx/sites-headers/hackspace.pe;
         return 301 https://www.hackspace.pe$request_uri;
     }
 }
@@ -64,7 +64,7 @@ server {
         limit_req zone=one burst=30 nodelay;
         include /etc/nginx/sites-headers/common.conf;
         include /etc/nginx/sites-headers/hsts.conf;
-        include /etc/nginx/sites-headers/hackspace.pe;
+        # include /etc/nginx/sites-headers/hackspace.pe;
 
         proxy_cache hackspace.pe;
         proxy_cache_lock on;
