@@ -1,0 +1,23 @@
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name hackspace.pe www.hackspace.pe;
+
+    root /home/core-beja/sites/hackspace.pe;
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        include /etc/nginx/sites-headers/common.conf;
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+    location = /40x.html {
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+    }
+}
+
