@@ -10,5 +10,5 @@ Landing for hackspace.pe while the site and its content is restructured.
 
 ## Licensing
 
-All resources developed by us in this repository is property
+All resources developed by us in this repository are property
 of ASOCIACION HACK SPACE PERU
