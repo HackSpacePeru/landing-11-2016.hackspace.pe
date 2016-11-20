@@ -68,12 +68,9 @@
             });
     }
 
-    $(document).on('ready', function() {
-        fbSDK(document, 'script', 'facebook-jssdk');
-    });
-
     $(window).on('load', function() {
-        fadePreloader();
+        fbSDK(document, 'script', 'facebook-jssdk');
         countdown();
+        fadePreloader();
     });
 })(jQuery);
