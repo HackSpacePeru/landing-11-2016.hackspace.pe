@@ -60,6 +60,14 @@ server {
     root /home/core-beja/sites/hackspace.pe;
     index index.html index.htm;
 
+    location /boost {
+        limit_req zone=one burst=1 nodelay;
+        include /etc/nginx/sites-headers/common.conf;
+        include /etc/nginx/sites-headers/hsts.conf;
+        # include /etc/nginx/sites-headers/hackspace.pe;
+        return 301 https://boost.hackspace.pe$request_uri;
+    }
+
     location / {
         limit_req zone=one burst=30 nodelay;
         include /etc/nginx/sites-headers/common.conf;
@@ -73,14 +81,6 @@ server {
         proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
 
         try_files $uri $uri/ =404;
-    }
-
-    location /boost {
-        limit_req zone=one burst=1 nodelay;
-        include /etc/nginx/sites-headers/common.conf;
-        include /etc/nginx/sites-headers/hsts.conf;
-        # include /etc/nginx/sites-headers/hackspace.pe;
-        return 301 https://boost.hackspace.pe$request_uri;
     }
 
     error_page 404 /404.html;
