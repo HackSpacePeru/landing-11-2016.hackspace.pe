@@ -65,7 +65,7 @@ server {
         include /etc/nginx/sites-headers/common.conf;
         include /etc/nginx/sites-headers/hsts.conf;
         # include /etc/nginx/sites-headers/hackspace.pe;
-        return 301 https://boost.hackspace.pe$request_uri;
+        return 301 https://boost.hackspace.pe;
     }
 
     location / {
