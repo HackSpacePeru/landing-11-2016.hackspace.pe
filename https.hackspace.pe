@@ -75,6 +75,14 @@ server {
         try_files $uri $uri/ =404;
     }
 
+    location /boost {
+        limit_req zone=one burst=1 nodelay;
+        include /etc/nginx/sites-headers/common.conf;
+        include /etc/nginx/sites-headers/hsts.conf;
+        # include /etc/nginx/sites-headers/hackspace.pe;
+        return 301 https://boost.hackspace.pe$request_uri;
+    }
+
     error_page 404 /404.html;
     location = /40x.html {
     }
