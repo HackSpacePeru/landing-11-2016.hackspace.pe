@@ -1,0 +1,7 @@
+#! /bin/bash
+DIR_REP="/home/core-beja/repositories/landing-11-2016.hackspace.pe"
+DIR_DEP="/home/core-beja/sites/landing-11-2016.hackspace.pe"
+WEB_DIR="${DIR_REP}/www"
+
+echo "Deploying landing-11-2016.hackspace.pe"
+echo "======================================"
