@@ -14,7 +14,7 @@
         countdown: {
             year: 2016,
             month: 11,
-            day: 28,
+            day: 30,
             hour: 12,
             minute: 0,
             second: 0,
