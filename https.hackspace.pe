@@ -1,4 +1,4 @@
-proxy_cache_path /home/core-beja/cache/hackspace.pe levels=1:2 keys_zone=hackspace.pe:10m max_size=2g inactive=60m use_temp_path=off;
+proxy_cache_path /home/core-beja/.deploy/cache/hackspace.pe levels=1:2 keys_zone=hackspace.pe:10m max_size=2g inactive=60m use_temp_path=off;
 limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
 
 server {

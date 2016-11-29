@@ -1,7 +1,22 @@
 #! /bin/bash
 DIR_REP="/home/core-beja/repositories/landing-11-2016.hackspace.pe"
-DIR_DEP="/home/core-beja/sites/landing-11-2016.hackspace.pe"
+DIR_DEP="/home/core-beja/sites/hackspace.pe"
+DIR_SET="/home/core-beja/.deploy/settings"
 WEB_DIR="${DIR_REP}/www"
 
 echo "Deploying landing-11-2016.hackspace.pe"
-echo "======================================"
+echo "============================="
+echo "* Clearing the deployment directory."
+rm -rf ${DIR_DEP}/*
+
+echo "* Copying new content to the deployment directory."
+cp -r ${WEB_DIR}/* ${DIR_DEP}/
+
+echo "* Updating Nginx configuration file."
+sudo cp ${DIR_REP}/https.landing-11-2016.hackspace.pe /etc/nginx/sites-available/hackspace.pe
+sudo nginx -s reload
+
+echo "* Clearing cloudflare cache."
+sudo /usr/local/bin/purge-cloudflare-cache hackspace.pe
+
+echo "* Deploy Complete!"
