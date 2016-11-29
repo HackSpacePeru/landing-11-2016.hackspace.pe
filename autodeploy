@@ -13,7 +13,7 @@ echo "* Copying new content to the deployment directory."
 cp -r ${WEB_DIR}/* ${DIR_DEP}/
 
 echo "* Updating Nginx configuration file."
-sudo cp ${DIR_REP}/https.landing-11-2016.hackspace.pe /etc/nginx/sites-available/hackspace.pe
+sudo cp ${DIR_REP}/https.hackspace.pe /etc/nginx/sites-available/hackspace.pe
 sudo nginx -s reload
 
 echo "* Clearing cloudflare cache."
