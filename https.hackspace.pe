@@ -8,6 +8,7 @@ server {
     location / {
         limit_req zone=one burst=1 nodelay;
         include /etc/nginx/sites-headers/common.conf;
+
         return 301 https://www.hackspace.pe$request_uri;
     }
 }
@@ -34,7 +35,7 @@ server {
         limit_req zone=one burst=1 nodelay;
         include /etc/nginx/sites-headers/common.conf;
         include /etc/nginx/sites-headers/hsts.conf;
-        # include /etc/nginx/sites-headers/hackspace.pe;
+
         return 301 https://www.hackspace.pe$request_uri;
     }
 }
@@ -64,15 +65,22 @@ server {
         limit_req zone=one burst=1 nodelay;
         include /etc/nginx/sites-headers/common.conf;
         include /etc/nginx/sites-headers/hsts.conf;
-        # include /etc/nginx/sites-headers/hackspace.pe;
+
         return 301 https://boost.hackspace.pe;
+    }
+
+    location /fb {
+        limit_req zone=one burst=1 nodelay;
+        include /etc/nginx/sites-headers/common.conf;
+        include /etc/nginx/sites-headers/hsts.conf;
+
+        return 301 https://www.facebook.com/HackSpacePeru;
     }
 
     location / {
         limit_req zone=one burst=30 nodelay;
         include /etc/nginx/sites-headers/common.conf;
         include /etc/nginx/sites-headers/hsts.conf;
-        # include /etc/nginx/sites-headers/hackspace.pe;
 
         proxy_cache hackspace.pe;
         proxy_cache_lock on;
