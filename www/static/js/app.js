@@ -13,9 +13,9 @@
     var config = {
         countdown: {
             year: 2016,
-            month: 11,
-            day: 30,
-            hour: 12,
+            month: 12,
+            day: 6,
+            hour: 0,
             minute: 0,
             second: 0,
         }
